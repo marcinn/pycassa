@@ -23,7 +23,7 @@ except ImportError:
 
 from distutils.cmd import Command
 
-__version__ = "1.11.1.post"
+__version__ = "1.11.3"
 
 long_description = """pycassa is a python client library for Apache Cassandra with the following features:
 
@@ -54,14 +54,14 @@ class rpm(Command):
             if status:
                 raise RuntimeError("RPM build failed")
 
-            print ""
-            print "RPM built"
+            print("")
+            print("RPM built")
         else:
-            print """
+            print("""
 `setup.py rpm` is not supported for this version of Python.
 
 Please ask in the user forums for help.
-"""
+""")
 
 class doc(Command):
 
@@ -97,15 +97,15 @@ class doc(Command):
             if status:
                 raise RuntimeError("documentation step '%s' failed" % mode)
 
-            print ""
-            print "Documentation step '%s' performed, results here:" % mode
-            print "   %s/" % path
+            print("")
+            print("Documentation step '%s' performed, results here:" % mode)
+            print("   %s/" % path)
         else:
-            print """
+            print("""
 `setup.py doc` is not supported for this version of Python.
 
 Please ask in the user forums for help.
-"""
+""")
 
 
 setup(
@@ -135,10 +135,10 @@ setup(
           'Natural Language :: English',
           'Operating System :: OS Independent',
           'Programming Language :: Python',
-          'Programming Language :: Python :: 2',
-          'Programming Language :: Python :: 2.6',
-          'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 2 :: Only',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
+          'Programming Language :: Python :: 3 :: Only',
           'Topic :: Software Development :: Libraries :: Python Modules'
           ]
       )
