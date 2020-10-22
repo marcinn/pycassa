@@ -243,9 +243,9 @@ def as_interface(obj, cls=None, methods=None, required=None):
 #     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 #     OTHER DEALINGS IN THE SOFTWARE.
 
-from UserDict import DictMixin
+from collections import MutableMapping
 
-class OrderedDict(dict, DictMixin):
+class OrderedDict(dict, MutableMapping):
     """ A dictionary which maintains the insertion order of keys. """
 
     def __init__(self, *args, **kwds):
@@ -315,14 +315,16 @@ class OrderedDict(dict, DictMixin):
     def keys(self):
         return list(self)
 
-    setdefault = DictMixin.setdefault
-    update = DictMixin.update
-    pop = DictMixin.pop
-    values = DictMixin.values
-    items = DictMixin.items
-    iterkeys = DictMixin.iterkeys
-    itervalues = DictMixin.itervalues
-    iteritems = DictMixin.iteritems
+    """
+    setdefault = MutableMapping.setdefault
+    update = MutableMapping.update
+    pop = MutableMapping.pop
+    values = MutableMapping.values
+    items = MutableMapping.items
+    iterkeys = MutableMapping.iterkeys
+    itervalues = MutableMapping.itervalues
+    iteritems = MutableMapping.iteritems
+    """
 
     def __repr__(self):
         if not self:
